@@ -1,0 +1,38 @@
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="person-1" author="Samuel">
+        <createTable tableName="person">
+            <column autoIncrement="true" name="id" type="bigint">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="person_id"/>
+            </column>
+            <column name="lastname" type="varchar(128)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="firstname" type="varchar(128)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="person-2" author="Samuel">
+        <insert tableName="person">
+            <column name="lastname" value="Doe"/>
+            <column name="firstname" value ="John"/>
+        </insert>
+    </changeSet>
+    <changeSet id="person-3" author="Melissa">
+        <insert tableName="person">
+            <column name="lastname" value="Gia"/>
+            <column name="firstname" value ="Mel"/>
+        </insert>
+    </changeSet>
+    <changeSet id="person-4" author="Melissa">
+        <insert tableName="person">
+            <column name="lastname" value="Gia"/>
+            <column name="firstname" value ="Pri"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
